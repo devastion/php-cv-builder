@@ -1,2 +1,2 @@
-# TO DO
-## ADD AJAX FOR HISTORY ANCHORS
+### TO DO LIST
+1. Add ajax get request for the anchor links
