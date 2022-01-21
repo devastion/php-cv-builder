@@ -35,7 +35,7 @@ for($i=0; $i<count($result); $i++){
 
     $finallink = $linkstr.$institutionstring.$jobstring;
     $fileGet = file_get_contents("generate.php?".$finallink);
-    echo '<a href="generate.php?'.$finallink.'" class="primary-link my-3 ajaxlink" target="_blank">'.$result[$i][17].'</a> <br />';
+    echo '<a href="generate.php?'.$finallink.'" class="primary-link my-3 ajaxlink" target="_blank" onclick="makeRequest()">'.$result[$i][17].'</a> <br />';
 }
 echo '</div>';
 

@@ -19,6 +19,7 @@ $job = $_GET['job'];
 $additionalInfo = $_GET['info'];
 
 $pdf = new FPDF();
+
 $pdf->AddPage();
 $pdf->SetAutoPageBreak(true, 0);
 $pdf->SetFont('Arial', 'B', 24);
@@ -62,5 +63,5 @@ if (isset($_SESSION["sessionid"])) {
     $stmt->store_result();
     $stmt->close();
 }
-$pdf->Output( isUTF8: true);
+$pdf->Output(isUTF8: true);
 
