@@ -18,15 +18,6 @@
     </div>
 </footer>
 </div>
-<script>
-    let httpRequest;
-    function makeRequest() {
-        httpRequest = new XMLHttpRequest();
-        httpRequest.open("GET", this.href);
-        httpRequest.send();
-        httpRequest.responseText;
-    }
-</script>
 <script src="template/index.51cd1bbc.js"></script>
 </body>
 </html>
