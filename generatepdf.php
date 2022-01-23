@@ -2,21 +2,23 @@
 require 'includes/fpdf/fpdf.php';
 session_start();
 
-$fname = $_GET['fname'];
-$lname = $_GET['lname'];
-$email = $_GET['email'];
-$phone = $_GET['phone'];
-$address = $_GET['address'];
-$position = $_GET['position'];
-$primary = $_GET['primary'];
-$secondary = $_GET['secondary'];
-$startYearEdu = $_GET['startYear'];
-$gradYearEdu = $_GET['gradYear'];
-$institution = $_GET['institution'];
-$startYearExp = $_GET['startExp'];
-$leavingYear = $_GET['leaving'];
-$job = $_GET['job'];
-$additionalInfo = $_GET['info'];
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+$fname = $_POST['fname'];
+$lname = $_POST['lname'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$address = $_POST['address'];
+$position = $_POST['position'];
+$primary = $_POST['primary'];
+$secondary = $_POST['secondary'];
+$startYearEdu = $_POST['startYear'];
+$gradYearEdu = $_POST['gradYear'];
+$institution = $_POST['institution'];
+$startYearExp = $_POST['startExp'];
+$leavingYear = $_POST['leaving'];
+$job = $_POST['job'];
+$additionalInfo = $_POST['info'];
 
 $pdf = new FPDF();
 
@@ -63,5 +65,6 @@ if (isset($_SESSION["sessionid"])) {
     $stmt->store_result();
     $stmt->close();
 }
-$pdf->Output(isUTF8: true);
+$pdf->Output();
 
+}

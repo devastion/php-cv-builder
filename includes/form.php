@@ -1,4 +1,4 @@
-<form action="generatepdf.php" method="get" target="_blank">
+<form action="generatepdf.php" method="post" target="_blank">
     <fieldset>
         <legend class="text-center mt-5">Personal Info</legend>
         <div class="row">
