@@ -1,5 +1,5 @@
 <?php
-require 'includes/fpdf/fpdf.php';
+require './includes/fpdf/fpdf.php';
 session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -46,7 +46,7 @@ for ($i = 0; $i < count($job); $i++) {
     $pdf->Ln();
 }
 if (isset($_SESSION["sessionid"])) {
-    require("config.php");
+    require("./config.php");
 
     $startYearEdu_string = implode("|", $startYearEdu);
     $gradYearEdu_string = implode("|", $gradYearEdu);

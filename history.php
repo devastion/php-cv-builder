@@ -1,6 +1,6 @@
 <?php
 $title = "PHP CV Builder - History";
-include "includes/header.php"; ?>
+include "./includes/header.php"; ?>
 <?php
 require("./config.php");
 
@@ -35,11 +35,11 @@ for($i=0; $i<count($result); $i++){
 
     $finallink = $linkstr.$institutionstring.$jobstring;
     $fileGet = file_get_contents("generate.php?".$finallink);
-    echo '<a href="generate.php?'.$finallink.'" class="primary-link my-3 ajaxlink" target="_blank" onclick="makeRequest()">'.$result[$i][17].'</a> <br />';
+    echo '<a href="./generate.php?'.$finallink.'" class="primary-link my-3 ajaxlink" target="_blank" onclick="makeRequest()">'.$result[$i][17].'</a> <br />';
 }
 echo '</div>';
 
 ?>
 <?php
-include "includes/footer.php"; ?>
+include "./includes/footer.php"; ?>
 

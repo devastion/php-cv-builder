@@ -1,6 +1,6 @@
 <?php
 $title = "PHP CV Builder - Login or Register";
-include "includes/header.php" ?>
+include "./includes/header.php" ?>
 <form method="post" class="mx-auto" id="loginform">
     <div class="mb-3">
         <label for="username" class="form-label">Username</label>
