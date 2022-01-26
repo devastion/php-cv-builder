@@ -4,7 +4,7 @@
     <div>
         <?php
         if (isset($_SESSION["sessionid"])) {
-            echo 'Welcome '.$_SESSION["sessionuser"];
+            echo 'Welcome ' . $_SESSION["sessionuser"];
             echo '<a href="index.php" class="link-primary mx-3">Home</a>
         <a href="includes/logout.php" class="link-primary mx-3">Logout</a>
         <a href="history.php" class="link-primary mx-3">History</a>
