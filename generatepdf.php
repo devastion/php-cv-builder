@@ -45,7 +45,7 @@ for ($i = 0; $i < count($job); $i++) {
     $pdf->CreateCell("", 16, 0, 10, $additionalInfo[$i], 1, "L", 10, 0, 0, 1);
     $pdf->Ln();
 }
-if (isset($_SESSION["sessionid"])) {
+if (isset($_SESSION["sessionid"]) && isset($_POST["generate-form"])) {
     require("./config.php");
 
     $startYearEdu_string = implode("|", $startYearEdu);

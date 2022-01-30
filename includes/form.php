@@ -107,6 +107,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacus nibh, 
         </button>
     </div>
     <div class="d-flex justify-content-center my-3">
-        <button class="btn btn-danger" type="submit">SUBMIT AND GENERATE CV</button>
+        <button class="btn btn-danger" type="submit" name="generate-form">SUBMIT AND GENERATE CV</button>
     </div>
 </form>
