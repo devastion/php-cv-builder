@@ -8,7 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?= $title ?></title>
     <link rel="stylesheet" href="template/index.32a9c362.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
 <div class="container">

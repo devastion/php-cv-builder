@@ -46,24 +46,21 @@ for ($i = 0; $i < count($job); $i++) {
     $pdf->Ln();
 }
 if (isset($_SESSION["sessionid"]) && isset($_POST["generate-form"])) {
-    require("./config.php");
+    $currentUser = $_SESSION["sessionuser"];
+    $dirName = "./archives/".$currentUser;
+    if(!file_exists($dirName)){
+        mkdir($dirName);
+    }
+    $fileCount = 0;
+    $files = glob($dirName."/*");
+    if($files){
+        $fileCount = count ($files);
+    }
 
-    $startYearEdu_string = implode("|", $startYearEdu);
-    $gradYearEdu_string = implode("|", $gradYearEdu);
-    $institution_string = implode("|", $institution);
-    $startYearExp_string = implode("|", $startYearExp);
-    $leavingYear_string = implode("|", $leavingYear);
-    $job_string = implode("|", $job);
-    $info_string = implode("|", $additionalInfo);
-    $user_id = $_SESSION["sessionid"];
+    $fileName = "CV".$fileCount.".pdf";
+    $pdf -> Output($dirName."/".$fileName, "F");
 
-    $sql = "INSERT INTO archive (user_id, first_name, last_name, email, phone, address, position, `primary`, secondary, start_year, grad_year, institution, start_year_exp, leaving_year, job, info, time_stamp) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
-    $mysqli->init();
-    $stmt = $mysqli->prepare($sql);
-    $stmt->bind_param("isssssssssssssss", $user_id, $fname, $lname, $email, $phone, $address, $position, $primary, $secondary, $startYearEdu_string, $gradYearEdu_string, $institution_string, $startYearExp_string, $leavingYear_string, $job_string, $info_string);
-    $stmt->execute();
-    $stmt->store_result();
-    $stmt->close();
+
 }
 $pdf->Output();
 
